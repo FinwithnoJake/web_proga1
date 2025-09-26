@@ -1,0 +1,77 @@
+.custom-button {
+    background-color: rgb(242, 153, 196);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.custom-button {
+    width: auto; /* Автоматическое определение ширины */
+    margin-right: 1%; /* Отступы между кнопками */
+}
+
+.submit-button {
+    width: 200px;
+    margin: 20px auto; /* Центрирование кнопки */
+    display: block;
+}
+
+.custom-button:hover {
+    background-color: rgb(227, 107, 165);
+}
+
+.custom-button:focus{
+    background-color: rgb(227, 107, 165);
+}
+
+.active-button {
+    background-color: rgb(227, 107, 165);
+}
+
+input[type="text"], textarea {
+    padding: 10%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    max-width: 80px;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid rgba(209, 224, 246, 0.5);
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.submit-button{
+    background-color: rgb(242, 153, 196);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: rgb(227, 107, 165);
+}
