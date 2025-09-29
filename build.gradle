@@ -12,6 +12,7 @@ repositories {
 dependencies {
     implementation files('fastcgi-lib.jar')
 }
+
 jar{
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 

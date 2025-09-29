@@ -4,28 +4,29 @@ import com.fastcgi.FCGIInterface;
 
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.Map;
 
 public class App {
     private static final String TEMPLATE = "Comtent-Type: application/json\n"+
             "Content-Length: %d\n\n%s";
     public static void main(String[] args) {
 
-        while (new FCGIInterface().FCGIaccept() >= 0) {
+            final var b = new FCGIInterface();
+        while (b.FCGIaccept() >= 0) {
             try {
-                HashMap<String, String> params = Params.parse(FCGIInterface.request.params.getProperty("QUERY_STRING"));
-                int x  =Integer.parseInt(params.get("x"));
-                float y  =Float.parseFloat(params.get("y"));
-                int r  =Integer.parseInt(params.get("r"));
+                Map<String, String> params = Params.parse(FCGIInterface.request.params.getProperty("QUERY_STRING"));
+                int x  = Integer.parseInt(params.get("x"));
+                float y  = Float.parseFloat(params.get("y"));
+                int r  = Integer.parseInt(params.get("r"));
 
-                if(Validator.validateX(x) && Validator.validateY(y) && Validator.validateR(r)) {
+                if (Validator.validateX(x) && Validator.validateY(y) && Validator.validateR(r)) {
                     sendJson(String.format("{\"result\": %b}", Checker.hit(x,y,r)));
-                }
-                else {
+                } else {
                     sendJson("{\"error\": \"invalid data\"}");
                 }
-            }catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 sendJson("{\"error\": \"wrong param type\"}");
-            }catch (NullPointerException e) {
+            } catch (NullPointerException e) {
                 sendJson(String.format("{\"error\": \"missed necessary param\"}"));
             } catch (Exception e) {
                 sendJson(String.format("{\"error\": %s}", e.toString()));
