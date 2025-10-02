@@ -23,7 +23,7 @@ $(".custom-button").on("click", function() {
         }
         else {
         startTime = new Date().getTime();
-        fetch("/fcgi-bin/app.jar?" + new URLSearchParams(json), {
+        fetch("/httpd/fcgi/web.jar" + new URLSearchParams(json), {
         method: "GET",
         headers: {
         "Content-Type": "application/json"
