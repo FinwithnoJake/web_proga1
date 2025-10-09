@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class App {
-    private static final String TEMPLATE = "Comtent-Type: application/json\n"+
+    private static final String TEMPLATE = "Content-Type: application/json\n"+
             "Content-Length: %d\n\n%s";
     public static void main(String[] args) {
 
@@ -27,7 +27,7 @@ public class App {
             } catch (NumberFormatException e) {
                 sendJson("{\"error\": \"wrong param type\"}");
             } catch (NullPointerException e) {
-                sendJson(String.format("{\"error\": \"missed necessary param\"}"));
+                sendJson("{\"error\": \"missed necessary param\"}");
             } catch (Exception e) {
                 sendJson(String.format("{\"error\": %s}", e.toString()));
             }

@@ -5,36 +5,51 @@ $(".custom-button").on("click", function() {
         $(this).addClass("active-button");
         });
 
-        $("#submit").on("click", function() {
+        $(".submit-button").on("click", function() {
+        let xValue = $("input[name='xValue']:checked").val() || null;
+        let yValue = $("input[name='yValue']").val() || null;
+        let rValue = $(".active-button").val() || null;
+
+        // Создаем JSON-объект
         let json = {
-        "x": $("input[name='xValue']:checked").val(),
-        "y": $("input[name='yValue']").val(),
-        "r": $(".active-button").val()
+            "x": xValue,
+            "y": yValue,
+            "r": rValue
         };
-        console.log(json.x, json.y, json.r)
-        if (isNaN(+json.x) || isNaN(+json.y) || isNaN(json.r) || json.y < -3 || json.y > 5) {
-        alert("Некорректные данные")
-            if (!json.x) {
-                alert("Пожалуйста, выберите значение x");}
-            if (!json.y) {
-                alert("Пожалуйста, выберите значение y");}
-            if (!json.r) {
-                alert("Пожалуйста, выберите значение r");}
+
+        // Дополнительная проверка перед отправкой
+        if (typeof json.x === 'undefined' ||
+            typeof json.y === 'undefined' ||
+            typeof json.r === 'undefined') {
+            console.error('Не все значения были получены');
         }
         else {
         startTime = new Date().getTime();
+
         fetch("/httpd/fcgi/web.jar" + new URLSearchParams(json), {
         method: "GET",
         headers: {
         "Content-Type": "application/json"
         }
+        body: JSON.stringify(json)
         })
         .then(response => {
-        if (!response.ok) {
-        throw new Error("Network response was not ok");
-        }
-        return response.json();
+         if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            console.log('Статус ответа:', response.status);
+            console.log('Заголовки:', response.headers);
+            return response.text();
         })
+        .then(text => {
+            try {
+                let data = JSON.parse(text);
+                // Дальнейшая обработка
+            } catch(e) {
+                alert('Ошибка парсинга JSON: ' + text);
+            }
+        })
+
         .then(response => {
         let odz;
         if (response.result) {
