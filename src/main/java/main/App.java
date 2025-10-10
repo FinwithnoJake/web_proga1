@@ -2,7 +2,6 @@ package main;
 
 import com.fastcgi.FCGIInterface;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 public class App {
