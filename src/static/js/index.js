@@ -5,7 +5,7 @@ $(".custom-button").on("click", function() {
         $(this).addClass("active-button");
         });
 
-        $(".submit-button").on("click", function() {
+$(".submit-button").on("click", function() {
         let xValue = $("input[name='xValue']:checked").val() || null;
         let yValue = $("input[name='yValue']").val() || null;
         let rValue = $(".active-button").val() || null;
@@ -30,7 +30,7 @@ $(".custom-button").on("click", function() {
         method: "GET",
         headers: {
         "Content-Type": "application/json"
-        }
+        },
         body: JSON.stringify(json)
         })
         .then(response => {
@@ -39,18 +39,10 @@ $(".custom-button").on("click", function() {
             }
             console.log('Статус ответа:', response.status);
             console.log('Заголовки:', response.headers);
-            return response.text();
-        })
-        .then(text => {
-            try {
-                let data = JSON.parse(text);
-                // Дальнейшая обработка
-            } catch(e) {
-                alert('Ошибка парсинга JSON: ' + text);
-            }
+            return response.json();
         })
 
-        .then(response => {
+        .then(data => {
         let odz;
         if (response.result) {
         odz = "Попадание";
@@ -66,16 +58,16 @@ $(".custom-button").on("click", function() {
         let currentTime = new Date().toLocaleString();
 
         // Добавляем строку в таблицу
-        let newRow = `
-<tr>
-<td>${json.x}</td>
-<td>${json.y}</td>
-<td>${json.r}</td>
-<td>${odz}</td>
-<td>${currentTime}</td>
-<td>${executionTime}</td>
-</tr>
-        `;
+        let newRow =`
+        <tr>
+            <td>${json.x}</td>
+            <td>${json.y}</td>
+            <td>${json.r}</td>
+            <td>${odz}</td>
+            <td>${currentTime}</td>
+            <td>${executionTime}</td>
+        </tr>`;
+
         document.querySelector("#resultTable tbody").insertAdjacentHTML('beforeend', newRow);
         })
         .catch(error => {

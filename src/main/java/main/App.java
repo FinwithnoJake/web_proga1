@@ -3,12 +3,14 @@ package main;
 import com.fastcgi.FCGIInterface;
 
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
 import java.util.Map;
 
 public class App {
-    private static final String TEMPLATE = "Content-Type: application/json\n"+
-            "Content-Length: %d\n\n%s";
+    private static final String TEMPLATE = """
+            Content-Type: application/json
+            Content-Length: %d
+
+            %s""";
     public static void main(String[] args) {
 
             final var b = new FCGIInterface();
@@ -29,11 +31,11 @@ public class App {
             } catch (NullPointerException e) {
                 sendJson("{\"error\": \"missed necessary param\"}");
             } catch (Exception e) {
-                sendJson(String.format("{\"error\": %s}", e.toString()));
+                sendJson(String.format("{\"error\": %s}", e));
             }
         }
     }
     private static void sendJson(String json) {
-        System.out.println(String.format(TEMPLATE, json.getBytes(StandardCharsets.UTF_8).length, json));
+        System.out.printf((TEMPLATE) + "%n", json.getBytes(StandardCharsets.UTF_8).length, json);
     }
 }
