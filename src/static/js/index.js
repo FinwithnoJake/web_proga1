@@ -12,9 +12,9 @@ $(".submit-button").on("click", function() {
 
         // Создаем JSON-объект
         let json = {
-            "x": xValue,
-            "y": yValue,
-            "r": rValue
+            x: xValue,
+            y: yValue,
+            r: rValue
         };
 
         // Дополнительная проверка перед отправкой
@@ -23,15 +23,15 @@ $(".submit-button").on("click", function() {
             typeof json.r === 'undefined') {
             console.error('Не все значения были получены');
         }
+        console.log(json.x, json.y, json.r)
         else {
         startTime = new Date().getTime();
 
-        fetch("/httpd/fcgi/web.jar" + new URLSearchParams(json), {
+        fetch("/httpd/fcgi/web.jar?" + new URLSearchParams(json), {
         method: "GET",
         headers: {
         "Content-Type": "application/json"
-        },
-        body: JSON.stringify(json)
+        }
         })
         .then(response => {
          if (!response.ok) {

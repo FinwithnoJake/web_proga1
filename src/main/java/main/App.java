@@ -36,6 +36,6 @@ public class App {
         }
     }
     private static void sendJson(String json) {
-        System.out.printf((TEMPLATE) + "%n", json.getBytes(StandardCharsets.UTF_8).length, json);
+        System.out.println(json);
     }
 }
