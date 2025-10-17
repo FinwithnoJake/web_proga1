@@ -74,5 +74,4 @@ $(".submit-button").on("click", function() {
         alert("Ошибка при отправке данных: " + error.message);
         });
         }
-
         });
