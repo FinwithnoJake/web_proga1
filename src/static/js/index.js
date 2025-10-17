@@ -22,8 +22,8 @@ $(".submit-button").on("click", function() {
             typeof json.y === 'undefined' ||
             typeof json.r === 'undefined') {
             console.error('Не все значения были получены');
-        }
-        console.log(json.x, json.y, json.r)
+
+        console.log(json.x, json.y, json.r)}
         else {
         startTime = new Date().getTime();
 
