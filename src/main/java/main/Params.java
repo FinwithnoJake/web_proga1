@@ -8,7 +8,7 @@ public class Params {
 
         for (String pair : queryString.split("&")) {
             String[] keyValue = pair.split("=");
-            if (keyValue.length > 1) {
+            if (keyValue.length == 2) {
                 params.put(keyValue[0], keyValue[1]);
             } else {
                 params.put(keyValue[0], "");

@@ -1,25 +1,43 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
-group = 'main'
+group = 'area.check'
+version = '1.0.0'
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'lib'
+    }
 }
 
 dependencies {
-    implementation files('fastcgi-lib.jar')
+    // Если есть fastcgi.jar в папке lib
+    implementation fileTree(dir: 'lib', include: ['*.jar'])
 }
 
-jar{
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
-    manifest {
-        attributes 'Main-Class' : 'main.App'
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/static']
+        }
     }
+}
 
-    from{
-        configurations.runtimeClasspath.collect {it.isDirectory() ? it : zipTree(it)}
-    }
+application {
+    mainClass = 'main.AreaCheckServer'
+}
+
+// Для удобного запуска
+task runServer(type: JavaExec) {
+    group = 'application'
+    description = 'Run the Area Check Server'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'main.AreaCheckServer'
+    standardInput = System.in
 }

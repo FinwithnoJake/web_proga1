@@ -35,6 +35,11 @@ public class App {
         }
     }
     private static void sendJson(String json) {
-        System.out.println(json);
+        String response = String.format("""
+        Content-Type: application/json
+        Content-Length: %d
+        
+        %s""", json.length(), json);
+        System.out.print(response);
     }
 }

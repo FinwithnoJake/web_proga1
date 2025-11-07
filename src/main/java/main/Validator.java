@@ -12,7 +12,8 @@ public class Validator {
     }
 
     //button
-    public static boolean validateR(int r) {
+    public static boolean validateR(float r) {
+
         return r == 1 || r == 1.5 || r == 2 || r == 2.5 || r == 3;
     }
 }
