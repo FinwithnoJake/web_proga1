@@ -1,0 +1,27 @@
+footer{
+        position:fixed;
+        left:0;
+        bottom:0;
+        margin: 0;
+        padding: 0;
+        height: 100px;
+        background-color: rgba(242, 153, 196, 0.9);
+        width: 100%;
+        text-align: center;
+        }
+
+        footer:hover{
+        box-shadow: 0 0 50px rgb(242, 153, 196);
+        }
+
+        footer img{
+        transition: transform 0.3s ease;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        border-radius: 30%;
+        }
+
+        footer img:hover{
+        transform: scale(1.2);
+        }

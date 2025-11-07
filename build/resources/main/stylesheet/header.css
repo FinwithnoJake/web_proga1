@@ -1,0 +1,52 @@
+.page-header{
+    position: fixed;
+    top: 0;
+    height: 90px;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0;
+    background-color: rgb(242, 153, 196);
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-header h1,
+.page-header p {
+    font-family: fantasy;
+    color: purple;
+    margin: 0;
+    padding: 0;
+    font-size: 19px;
+    line-height: 1.2;
+    transition: transform 0.3s ease;
+}
+
+.page-header h1 {
+    font-size: 24px; /* Размер заголовка */
+}
+
+.page-header p {
+    font-size: 18px; /* Размер обычного текста */
+}
+
+header:hover{
+    box-shadow: 0 0 50px rgb(255, 105, 180);
+}
+
+header pre:hover{
+    transform: scale(1.2);
+}
+@media (max-width: 768px) {
+    header {
+        height: 80px;
+        padding: 5px 0;
+    }
+
+    header pre {
+        font-size: 16px;
+    }
+}

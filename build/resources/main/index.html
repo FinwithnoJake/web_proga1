@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Hehe-web1</title>
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <link rel="stylesheet" href="stylesheet/header.css">
+    <link rel="stylesheet" href="stylesheet/footer.css">
+    <link rel="stylesheet" href="stylesheet/form.css">
+    <link rel="stylesheet" href="stylesheet/table.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header class="page-header">
+    <div class="header-content">
+        <h1>Колодей Елизавета Владимировна</h1>
+        <p>Группа: P3207</p>
+        <p>Вариант: 408824</p>
+    </div>
+</header>
+    <div class="first-row">
+        <div class="container">
+            <div>
+                <form>
+                    <p class="cordsText">Выберите x:</p>
+                    <label>
+                        <input type="radio" name="xValue" value="-4"> -4
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="xValue" value="-3"> -3
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="xValue" value="-2"> -2
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="xValue" value="-1"> -1
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="xValue" value="0"> 0
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="xValue" value="1"> 1
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="xValue" value="2"> 2
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="xValue" value="3"> 3
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="xValue" value="4"> 4
+                    </label>
+                    <br>
+                </form>
+            </div>
+            <div class="form">
+                <p>Введите y:</p>
+                <label>
+                    <input name="yValue" type="number" min="-3" max="5" required placeholder="(от -3 до 5)">
+                </label>
+            </div>
+            <div>
+                <form class="form">
+                    <p>Выберите R:</p>
+                        <input class="custom-button" type="button" name="rValue" value="1">
+                        <input class="custom-button" type="button" name="rValue" value="1.5">
+                        <input class="custom-button" type="button" name="rValue" value="2">
+                        <input class="custom-button" type="button" name="rValue" value="2.5">
+                        <input class="custom-button" type="button" name="rValue" value="3">
+                </form>
+            </div>
+            <div>
+                <button class="submit-button">Проверить попадание</button>
+            </div>
+        </div>
+
+        <div class="graph">
+            <a href="https://se.ifmo.ru/courses/web">
+                <img src="areas.png" alt="График областей">
+            </a>
+        </div>
+    </div>
+    <div class="table">
+        <table id="resultTable" class="resTable">
+            <thead>
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>ОДЗ</th>
+                <th>Текущее время</th>
+                <th>Время выполнения скрипта</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+    <footer>
+        <a href="https://t.me/addstickers/tg_llozzxq">
+            <img src="forfooter.png" alt="layla">
+        </a>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
