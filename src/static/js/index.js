@@ -116,7 +116,7 @@ function sendRequest(data) {
     params.append('y', data.y);
     params.append('r', data.r);
     
-    // ИСПРАВЬ ЭТУ СТРОКУ - укажи правильный URL твоего сервера
+    // ИСПРАВИТЬ ЭТУ СТРОКУ
     const url = '/check?' + params.toString();
     console.log('URL запроса:', url);
     

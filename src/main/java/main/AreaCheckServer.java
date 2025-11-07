@@ -24,9 +24,9 @@ public class AreaCheckServer {
         server.setExecutor(null);
         server.start();
 
-        System.out.println("✅ Сервер запущен на http://localhost:" + port);
-        System.out.println("📁 Открой в браузере: http://localhost:" + port);
-        System.out.println("⏹️  Для остановки нажми Ctrl+C");
+        System.out.println("Сервер запущен на http://localhost:" + port);
+        System.out.println("Открой в браузере: http://localhost:" + port);
+        System.out.println("Для остановки нажми Ctrl+C");
     }
 
     // Обработчик для проверки попадания

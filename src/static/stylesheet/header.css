@@ -26,11 +26,11 @@
 }
 
 .page-header h1 {
-    font-size: 24px; /* Размер заголовка */
+    font-size: 24px;
 }
 
 .page-header p {
-    font-size: 18px; /* Размер обычного текста */
+    font-size: 18px;
 }
 
 header:hover{
