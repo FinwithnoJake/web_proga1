@@ -13,7 +13,7 @@ public class AreaCheckServer {
     private static final CopyOnWriteArrayList<RequestResult> history = new CopyOnWriteArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        int port = 5000;
+        int port = 5001;
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         // Обработчик для проверки области

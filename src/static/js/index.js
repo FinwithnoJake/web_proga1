@@ -1,6 +1,6 @@
 // Обработчики для кнопок выбора R
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('✅ Страница загружена');
+    console.log('Страница загружена');
     
     // Назначаем обработчики для кнопок R
     const rButtons = document.querySelectorAll('.custom-button');
@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (submitButton) {
         submitButton.addEventListener('click', submitForm);
     } else {
-        console.error('❌ Кнопка отправки не найдена');
+        console.error('Кнопка отправки не найдена');
     }
 });
 
 let startTime;
 
 function submitForm() {
-    console.log('🔄 Обработка формы...');
+    console.log('Обработка формы...');
     
     // Получаем значения
     let xValue = getSelectedXValue();
@@ -39,11 +39,11 @@ function submitForm() {
         r: rValue
     };
     
-    console.log('📊 Данные для отправки:', data);
+    console.log('Данные для отправки:', data);
     
     // Проверяем, что все значения есть
     if (data.x === null || data.y === null || data.r === null) {
-        console.error('❌ Не все значения были получены');
+        console.error('Не все значения были получены');
         alert('Пожалуйста, заполните все поля:\n- Выберите X\n- Введите Y\n- Выберите R');
         return;
     }
@@ -175,7 +175,7 @@ function addTableRow(data, result, currentTime, executionTime) {
     const tableBody = document.querySelector("#resultTable tbody");
     
     if (!tableBody) {
-        console.error('❌ Таблица результатов не найдена');
+        console.error('Таблица результатов не найдена');
         // Создаем таблицу если её нет
         createResultsTable();
         return;
@@ -195,11 +195,11 @@ function addTableRow(data, result, currentTime, executionTime) {
     // Добавляем строку в начало таблицы
     tableBody.insertBefore(newRow, tableBody.firstChild);
     
-    console.log('✅ Результат добавлен в таблицу');
+    console.log('Результат добавлен в таблицу');
 }
 
 function createResultsTable() {
-    console.log('📊 Создаем таблицу результатов...');
+    console.log('Создаем таблицу результатов...');
     // Если таблицы нет, можно создать её динамически
     const container = document.getElementById('historyContainer') || document.body;
     
